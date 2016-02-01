@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/spring-bean-java-injection/src/main/java/com/sobngwi/entities/RunDemo.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.sobngwi.entities.RunDemo"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="spring-bean-java-injection"/>
+</launchConfiguration>

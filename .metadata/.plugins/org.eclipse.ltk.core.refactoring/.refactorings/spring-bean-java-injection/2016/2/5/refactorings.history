@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;lyon&apos; from expression &apos;context.getBean(&quot;game&quot;,Lyon.class)&apos;&#x0A;- Original project: &apos;spring-bean-java-injection&apos;&#x0A;- Variable name: &apos;lyon&apos;&#x0A;- Destination method: &apos;com.sobngwi.entities.RunDemo.main()&apos;&#x0A;- Variable expression: &apos;context.getBean(&quot;game&quot;,Lyon.class)&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;lyon&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src\/main\/java&lt;com.sobngwi.entities{RunDemo.java" name="lyon" replace="true" selection="511 35" stamp="1454358612103" version="1.0"/>
+</session>
