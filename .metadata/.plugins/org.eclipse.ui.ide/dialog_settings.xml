@@ -140,6 +140,13 @@
 		<item value="org.springsource.sts.package:3.7.2.201511261050-RELEASE-e44"/>
 		<item value="org.springsource.sts:3.7.2.201511261050-RELEASE"/>
 	</list>
+	<section name="CleanDialogSettings">
+		<item value="484" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="354" key="DIALOG_HEIGHT"/>
+		<item value="524" key="DIALOG_X_ORIGIN"/>
+		<item value="180" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="NewWizardAction">
 		<item value="org.springsource.ide.eclipse.gradle.wizards.new" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
