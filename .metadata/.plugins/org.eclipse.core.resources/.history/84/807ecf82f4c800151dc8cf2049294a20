@@ -1,0 +1,19 @@
+package com.sobngwi.entities;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+@Configuration
+@Import(InfrastructureConfig.class)
+public class InfrastructureConfig {
+
+	@Bean
+	public DataSource datasource(){
+		return new DriverManagerDataSource();
+	}
+	
+}

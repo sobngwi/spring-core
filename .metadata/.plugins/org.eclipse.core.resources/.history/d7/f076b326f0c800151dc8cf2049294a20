@@ -1,0 +1,23 @@
+package com.sobngwi.entities;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+	
+	@Bean
+	public Game game(){
+		
+	}
+	
+	@Bean
+	public Team marseille(){
+		
+	}
+	
+	@Bean
+	public Team paris(){
+		
+	}
+
+}

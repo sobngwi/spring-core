@@ -1,0 +1,5 @@
+package com.sobngwi.entities;
+
+public class Team {
+
+}

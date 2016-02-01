@@ -1,0 +1,19 @@
+package com.sobngwi.entities;
+
+public class FootballGame {
+	
+	private Team  homeTeam ;
+	private Team  localTeam;
+	
+	public FootballGame() {}
+
+	public FootballGame(Team homeTeam, Team localTeam) {
+		super();
+		this.homeTeam = homeTeam;
+		this.localTeam = localTeam;
+	};
+	
+	
+	
+
+}

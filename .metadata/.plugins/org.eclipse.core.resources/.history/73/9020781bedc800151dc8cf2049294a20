@@ -1,0 +1,11 @@
+package com.sobngwi.entities;
+
+public class Paris implements Team {
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

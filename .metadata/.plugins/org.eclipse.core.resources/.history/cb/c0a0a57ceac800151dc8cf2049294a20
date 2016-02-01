@@ -1,0 +1,13 @@
+package com.sobngwi.entities;
+
+public class FootballGame {
+	
+	private Team  homeTeam ;
+	private Team  localTeam;
+	
+	public FootballGame() {
+	}
+	
+	
+
+}
