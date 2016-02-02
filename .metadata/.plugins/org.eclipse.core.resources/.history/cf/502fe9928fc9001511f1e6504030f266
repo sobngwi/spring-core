@@ -1,0 +1,54 @@
+package com.sobngwi.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class FootBallGameTest  {
+	
+	private Game game ;
+	private ApplicationContext context;
+
+	@Before
+	public void setUp() throws Exception {
+	    context = new AnnotationConfigApplicationContext(AppConfig.class);
+		game=context.getBean("game", Game.class); 
+		
+	}
+
+	@Test
+	public void testPlayGame() {
+		String home = game.getHomeTeam().getName();
+		String away = game.getAwayTeam().getName();
+		
+		String result = game.playGame() ;
+
+		assertTrue(result.equals("Post-Poned") ||result.contains(home) || result.contains(away) );
+	}
+	
+	@Test
+	public void homeAndAwayAreNotNull() {
+		String home = game.getHomeTeam().getName();
+		String away = game.getAwayTeam().getName();
+		
+		 game.playGame() ;
+
+		assertNotNull(home);
+		assertNotNull(away);
+		
+	}
+	
+	@Test
+	public void theHomeTeamSetOperationIsCorrectlyUpdated() {
+		 Team lyon = context.getBean("lyon", Lyon.class);
+		 game.setHomeTeam(lyon);
+		 game.playGame() ;
+
+		 assertEquals(lyon.getName(), game.getHomeTeam().getName());
+		
+	}
+
+}

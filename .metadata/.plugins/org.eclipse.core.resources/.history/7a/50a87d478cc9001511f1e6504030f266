@@ -1,0 +1,22 @@
+package com.sobngwi.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class FootBallGameTest {
+
+	@Before
+	public void setUp() throws Exception {
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+	}
+
+	@Test
+	public void testPlayGame() {
+		fail("Not yet implemented");
+	}
+
+}
