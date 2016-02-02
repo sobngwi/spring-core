@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.sobngwi.entities.Account;
@@ -23,6 +24,8 @@ public class JdbcAccountRepository implements AccountRepository {
 	private static long nextId =0 ;
 	
 	@Autowired
+	AccountRowMapper accountRowMapper;
+	@Autowired
 	public  JdbcAccountRepository(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
@@ -31,13 +34,13 @@ public class JdbcAccountRepository implements AccountRepository {
 	@Override
 	public List<Account> getAccounts() {
 		String sqltext = "select * from account" ;
-		return jdbcTemplate.query(sqltext, new AccountMapper());
+		return jdbcTemplate.query(sqltext, accountRowMapper);
 	}
 
 	@Override
 	public Account getAccount(Long id) {
 		String sqltext = "select * from account where id=?" ;
-		return jdbcTemplate.queryForObject(sqltext, new AccountMapper(), id);
+		return jdbcTemplate.queryForObject(sqltext, accountRowMapper, id);
 	}
 
 	
@@ -69,12 +72,12 @@ public class JdbcAccountRepository implements AccountRepository {
 
 	}	
 	
-	private class AccountMapper implements RowMapper<Account> {
+	/*private class AccountMapper implements RowMapper<Account> {
 		@Override
 		public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
 			return new Account(rs.getLong("id"), rs.getBigDecimal("balance") ) ;
 		}
 		
-	}
+	}*/
 
 }

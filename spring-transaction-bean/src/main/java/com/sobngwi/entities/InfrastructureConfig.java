@@ -5,24 +5,24 @@ import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.sobngwi.aspect.LoggingAspect;
-import com.sobngwi.dao.AccountRepository;
-import com.sobngwi.dao.JdbcAccountRepository;
+import com.sobngwi.dao.AccountRowMapper;
 
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:prod.properties")
+@ComponentScan({"com.sobngwi.dao"})
 public class InfrastructureConfig {
 
 	@Autowired
@@ -34,18 +34,17 @@ public class InfrastructureConfig {
 	}
 	
 	@Bean ( name = "transactionManager")
-	@Profile("test")
 	public PlatformTransactionManager transactionManagerForTest(){
 		return new DataSourceTransactionManager(datasourceForTest());
 	}
 	
 	@Bean ( name = "transactionManager")
-	@Profile("prod")
 	public PlatformTransactionManager transactionManagerForProd(){
 		return new DataSourceTransactionManager(datasourceForprod());
 	}
 	
 	@Bean
+	@Profile("test")
 	public DataSource datasourceForTest(){
 		return new EmbeddedDatabaseBuilder()
 				   .generateUniqueName(true)
@@ -57,6 +56,7 @@ public class InfrastructureConfig {
 	}
 	
 	@Bean
+	@Profile("prod")
 	public DataSource datasourceForprod(){
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("db.driver"));
@@ -67,11 +67,9 @@ public class InfrastructureConfig {
 		return dataSource;
 	}
 	
-	
 	@Bean
-	public AccountRepository accountRepository(){
-		return new JdbcAccountRepository(datasourceForTest());
+	public AccountRowMapper accountRowMapper(){
+		return new AccountRowMapper();
 	}
 
-	
 }

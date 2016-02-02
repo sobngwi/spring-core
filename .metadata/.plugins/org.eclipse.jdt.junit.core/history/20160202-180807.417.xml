@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun com.sobngwi.entities.AccountRepositoryTest" project="spring-transaction-bean" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="com.sobngwi.entities.AccountRepositoryTest" time="0.03">
+    <testcase name="testCreateAccount" classname="com.sobngwi.entities.AccountRepositoryTest" time="0.001"/>
+    <testcase name="testGetAccount" classname="com.sobngwi.entities.AccountRepositoryTest" time="0.004"/>
+    <testcase name="testUpdateAccount" classname="com.sobngwi.entities.AccountRepositoryTest" time="0.005"/>
+    <testcase name="testGetAccounts" classname="com.sobngwi.entities.AccountRepositoryTest" time="0.006"/>
+    <testcase name="testGetNumberOfAccounts" classname="com.sobngwi.entities.AccountRepositoryTest" time="0.006"/>
+    <testcase name="testDeleteAccount" classname="com.sobngwi.entities.AccountRepositoryTest" time="0.005"/>
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.AccountRepositoryTest" time="0.003"/>
+  </testsuite>
+</testrun>

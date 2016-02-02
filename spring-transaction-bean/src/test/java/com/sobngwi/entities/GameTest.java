@@ -19,21 +19,19 @@ import com.sobngwi.dao.JdbcAccountRepository;
 @ContextConfiguration(classes = AppConfig.class)
 @Transactional
 @ActiveProfiles("test")
-@ComponentScan("com.sobngwi")
 public class GameTest {
 
 	@Autowired
 	protected ApplicationContext context;
 	@Autowired
 	protected Game  game;	
-	@Autowired
-	protected JdbcAccountRepository jdbcAccountRepository ;
+
 
 	@Test
 	public void should_initialiez_bean_without_error(){
 		assertNotNull(context);
 		assertNotNull(game);
-		assertNotNull(jdbcAccountRepository);
+
 	}
 	
 }

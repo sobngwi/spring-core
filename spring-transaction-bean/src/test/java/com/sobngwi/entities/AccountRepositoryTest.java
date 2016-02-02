@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class AccountRepositoryTest extends GameTest{
+public class AccountRepositoryTest extends AccountTest{
 
 
 
@@ -58,16 +58,14 @@ public class AccountRepositoryTest extends GameTest{
 	@Test
 	public void testUpdateAccount() {
 		Account account = jdbcAccountRepository.getAccount(1L);
-		BigDecimal currentAccountBalance = account.getBalance();
 		BigDecimal newAccountBalance = new BigDecimal("50.0");
 		account.setBalance(newAccountBalance);
 		
 		jdbcAccountRepository.updateAccount(account);
 		
-		assertThat(account.getBalance(),
+		assertThat(jdbcAccountRepository.getAccount(1l).getBalance(),
 				is(closeTo(newAccountBalance, new BigDecimal("0.01"))));
-		
-		
+	
 	}
 
 }
