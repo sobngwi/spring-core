@@ -1,0 +1,22 @@
+package com.sobngwi.dao;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import com.sobngwi.entities.Account;
+
+public interface AccountRepository {
+
+	List<Account> getAccounts();
+	
+	Account getAccount(Long accountId);
+	
+	
+	int getNumberOfAccounts();
+	
+	long createAccount(BigDecimal initalAmount);
+	
+	int deleteAccount(Long id);
+	
+	void updateAccount(Account account);
+}

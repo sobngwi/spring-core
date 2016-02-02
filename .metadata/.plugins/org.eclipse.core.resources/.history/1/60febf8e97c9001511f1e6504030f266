@@ -1,0 +1,45 @@
+package com.sobngwi.dao;
+
+import java.util.List;
+
+import com.sobngwi.entities.Account;
+
+public class JdbcAccountRepository implements AccountRepository {
+
+	@Override
+	public List<Account> getAccounts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Account getAccount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int numberOfAccounts() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long createAccount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteAccount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void updateAccount() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

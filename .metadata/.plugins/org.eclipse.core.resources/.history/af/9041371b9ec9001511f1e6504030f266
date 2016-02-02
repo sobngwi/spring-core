@@ -1,0 +1,52 @@
+package com.sobngwi.entities;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.transaction.PlatformTransactionManager;
+
+import com.sobngwi.aspect.LoggingAspect;
+
+@Configuration
+public class InfrastructureConfig {
+
+	@Bean
+	public DataSource datasource(){
+		return new DriverManagerDataSource();
+	}
+	
+	@Bean
+	public LoggingAspect loggingAspect() {
+		return new LoggingAspect() ;
+	}
+	
+	@Bean ( name = "transactionManager")
+	@Profile("test")
+	public PlatformTransactionManager transactionManagerForTest(){
+		return new DataSourceTransactionManager(datasourceForTest());
+	}
+	
+	@Bean
+	public DataSource datasourceForTest(){
+		return new EmbeddedDatabaseBuilder()
+				   .generateUniqueName(true)
+				   .setType(EmbeddedDatabaseType.H2)
+				   .setScriptEncoding("UTF-8")
+				   .addScript("schema.sql")
+				   .addScripts("data.sql")
+				   .build();
+	}
+	
+	@Bean ( name = "transactionManager")
+	@Profile("test")
+	public PlatformTransactionManager transactionManagerForProd(){
+		return new DataSourceTransactionManager(datasourceForProd());
+	}
+	
+}

@@ -1,0 +1,49 @@
+package com.sobngwi.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class AccountRepositoryTest extends GameTest{
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testJdbcAccountRepository() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAccounts() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAccount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetNumberOfAccounts() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCreateAccount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeleteAccount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testUpdateAccount() {
+		fail("Not yet implemented");
+	}
+
+}

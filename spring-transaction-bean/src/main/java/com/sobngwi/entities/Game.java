@@ -1,0 +1,10 @@
+package com.sobngwi.entities;
+
+public interface Game {
+	void setHomeTeam(Team homeTeam);
+	void setAwayTeam(Team awayTeam);
+	Team getAwayTeam() ;
+	Team getHomeTeam();
+	String playGame();
+
+}

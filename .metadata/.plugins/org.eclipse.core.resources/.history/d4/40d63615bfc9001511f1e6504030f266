@@ -1,0 +1,51 @@
+package com.sobngwi.entities;
+
+import static org.junit.Assert.*;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class AccountRepositoryTest extends GameTest{
+
+
+
+	@Test
+	public void testGetAccounts() {
+		List<Account> accounts = repository.getAccounts() ;
+		
+		assertThat(accounts.size(), is(3));
+	}
+
+	@Test
+	public void testGetAccount() {
+		Account account = repository.getAccount(1L);
+		
+		assertThat( account.getId(), is(1L));
+		assertThat(new BigDecimal("100.0"),
+				is(closeTo(account.getBalance(), new BigDecimal("0.01")))) ;
+	}
+
+	@Test
+	public void testGetNumberOfAccounts() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCreateAccount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDeleteAccount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testUpdateAccount() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.sobngwi.dao;
+
+public interface AccountRepository {
+
+}

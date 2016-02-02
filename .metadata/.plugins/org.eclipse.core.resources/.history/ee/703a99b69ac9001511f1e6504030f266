@@ -1,0 +1,21 @@
+package com.sobngwi.service;
+
+import java.math.BigDecimal;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
+
+import com.sobngwi.dao.AccountRepository;
+
+@Service
+@Profile("test")
+public class AccountService {
+	
+	@Autowired
+	private AccountRepository repository;
+	
+	public BigDecimal getBalance(Long accountId) {
+		return repository.getBalance(accountId) ;
+	}
+}

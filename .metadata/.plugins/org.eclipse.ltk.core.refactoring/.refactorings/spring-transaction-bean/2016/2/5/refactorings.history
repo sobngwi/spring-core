@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;repository&apos; in &apos;com.sobngwi.entities.GameTest&apos; to &apos;accountRepository&apos;&#x0A;- Original project: &apos;spring-transaction-bean&apos;&#x0A;- Original element: &apos;com.sobngwi.entities.GameTest.repository&apos;&#x0A;- Renamed element: &apos;com.sobngwi.entities.GameTest.accountRepository&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;repository&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/test\/java&lt;com.sobngwi.entities{GameTest.java[GameTest^repository" name="accountRepository" references="true" setter="false" stamp="1454428463686" textual="false" version="1.0"/>
+</session>

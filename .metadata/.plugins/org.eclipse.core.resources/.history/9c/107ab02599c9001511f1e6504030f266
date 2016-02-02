@@ -1,0 +1,20 @@
+package com.sobngwi.dao;
+
+import java.util.List;
+
+import com.sobngwi.entities.Account;
+
+public interface AccountRepository {
+
+	List<Account> getAccounts();
+	
+	Account getAccount(Long id);
+	
+	int numberOfAccounts();
+	
+	long createAccount();
+	
+	int deleteAccount();
+	
+	void updateAccount();
+}
