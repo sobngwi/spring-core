@@ -1,0 +1,19 @@
+package com.sobngwi.aspect;
+
+import java.util.logging.Logger;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+//@Component // aspect is a string bean.
+public class LoggingAspect {
+
+	private Logger log = Logger.getLogger(getClass().getName());
+	
+	@Before("execution( void com.sobngwi.entities..*.*(*))")
+	public void callSetters(JoinPoint joinpoint) {
+		log.info("A setter is called ");
+	}
+}
