@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AccountTestJpa" project="spring-test-jpa-transaction" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.sobngwi.entities.AccountTestJpa" time="0.023">
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.AccountTestJpa" time="0.023"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,73 @@
+package com.sobngwi.entities;
+
+import java.util.Properties;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.sobngwi.aspect.LoggingAspect;
+
+@Configuration
+@EnableTransactionManagement
+@PropertySource("classpath:prod.properties")
+@ComponentScan({"com.sobngwi.dao"})
+public class InfrastructureConfig {
+
+	@Autowired
+	private Environment env;
+
+	@Bean
+	public LoggingAspect loggingAspect() {
+		return new LoggingAspect() ;
+	}
+	
+	
+	
+	// ORM .
+	@Bean JpaVendorAdapter jpaVendorAdapter() {
+		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter() ;
+		adapter.setShowSql(true);
+		adapter.setGenerateDdl(true);
+		adapter.setDatabase(Database.H2);
+		adapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect");
+		return adapter;
+	}
+	
+	@Bean LocalContainerEntityManagerFactoryBean entityManagerFactory( DataSource dataSource, JpaVendorAdapter jpaVendorAdapter ){
+		Properties props = new Properties();
+		props.setProperty("hibernate.format.sql", String.valueOf(true));
+		props.setProperty("hibernate.hbm2ddl.auto", String.valueOf(true));
+		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+		emf.setDataSource(dataSource);
+		emf.setPackagesToScan("com.sobngwi.entitie");
+		emf.setJpaVendorAdapter(jpaVendorAdapter);
+		emf.setJpaProperties(props);
+		return emf;
+	}
+	
+	@Bean
+	public PlatformTransactionManager transactionManager( EntityManagerFactory emf){
+		return new JpaTransactionManager(emf);
+	}
+	
+
+	/*@Bean // Translate persistence exception ( jpa and hibernate) into spring exception dataaccess 
+	public BeanPostProcessor persistenceTranslation(){
+		return new PersistenceExceptionTranslationPostProcessor();
+	}*/
+
+}

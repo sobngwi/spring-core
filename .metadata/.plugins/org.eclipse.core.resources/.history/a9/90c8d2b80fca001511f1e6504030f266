@@ -1,0 +1,85 @@
+package com.sobngwi.configuration;
+
+import java.util.Properties;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@Configuration
+@EnableTransactionManagement
+@PropertySource("classpath:prod.properties")
+@ComponentScan({"com.sobngwi.entities", "com.sobngwi.repositoryjpa.impl"})
+public class InfrastructureConfigJpa {
+
+	@Autowired
+	private Environment env;
+ /*
+	@Autowired
+	DataSource datasourceProd ;
+	@Autowired
+	DataSource datasourceDev ;
+	*/
+	
+	
+	@Bean
+	public DataSource dataSource(){
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setDriverClassName(env.getProperty("db.driver"));
+		dataSource.setUrl(env.getProperty("db.url"));
+		dataSource.setUsername(env.getProperty("db.user"));
+		dataSource.setPassword(env.getProperty("db.pass"));
+		
+		return dataSource;
+	}
+	
+	
+	
+	// ORM .
+	@Bean JpaVendorAdapter jpaVendorAdapter() {
+		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter() ;
+		adapter.setShowSql(true);
+		adapter.setGenerateDdl(true);
+		adapter.setDatabase(Database.MYSQL);
+		//adapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect");
+		return adapter;
+	}
+	
+	@Bean LocalContainerEntityManagerFactoryBean entityManagerFactory(  ){
+		Properties props = new Properties();
+		props.setProperty("hibernate.format.sql", String.valueOf(true));
+		props.setProperty("hibernate.hbm2ddl.auto", String.valueOf(true));
+		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+		emf.setDataSource(dataSource());
+		emf.setPackagesToScan("com.sobngwi.entities");
+		emf.setJpaVendorAdapter(jpaVendorAdapter());
+		emf.setJpaProperties(props);
+		return emf;
+	}
+	
+	@Bean
+	public PlatformTransactionManager transactionManager( EntityManagerFactory emf){
+		return new JpaTransactionManager(emf);
+	}
+	
+
+	/*@Bean // Translate persistence exception ( jpa and hibernate) into spring exception dataaccess 
+	public BeanPostProcessor persistenceTranslation(){
+		return new PersistenceExceptionTranslationPostProcessor();
+	}*/
+
+}

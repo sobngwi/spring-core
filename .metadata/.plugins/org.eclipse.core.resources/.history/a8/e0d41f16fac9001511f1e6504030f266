@@ -1,0 +1,82 @@
+package com.sobngwi.dao;
+
+import java.math.BigDecimal;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import com.sobngwi.entities.Account;
+
+@Repository
+@Profile("test")
+public class JdbcAccountRepositoryJpa implements AccountRepository {
+
+	private JdbcTemplate jdbcTemplate;
+	private static long nextId =0 ;
+	
+	@PersistenceContext
+	private EntityManager entitymanager;
+	
+	
+	@Override
+	public List<Account> getAccounts() {
+		return entitymanager.createQuery("select a from Account a", Account.class)
+							.getResultList();
+	}
+
+	@Override
+	public Account getAccount(Long id) {
+		return entitymanager.find(Account.class, id);
+	}
+
+	
+	@Override
+	public int getNumberOfAccounts() {
+		String sqltext = "select count(a.id) from Account a"; // as a.id is unique : the key
+		Long result = (Long) entitymanager.createQuery(sqltext)
+								.getSingleResult();
+		return result.intValue();
+	}
+
+	@Override
+	public long createAccount(BigDecimal initalAmount) {
+		String sqltext = "insert into account(id, balance) values(?,?)";
+		long id = nextId++ ;
+		jdbcTemplate.update(sqltext, id, initalAmount);
+		return id ;
+		
+	}
+
+	@Override
+	public int deleteAccount(Long accountId) {
+		String sqltext = "delete from  account where id=?" ;
+		return jdbcTemplate.update(sqltext, accountId);
+	}
+
+	@Override
+	public void updateAccount( Account account) {
+		String sqltext = "update   account set balance = ? where id =?" ;
+		jdbcTemplate.update(sqltext, account.getBalance(), account.getId());
+
+	}	
+	
+	/*private class AccountMapper implements RowMapper<Account> {
+		@Override
+		public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
+			return new Account(rs.getLong("id"), rs.getBigDecimal("balance") ) ;
+		}
+		
+	}*/
+
+}

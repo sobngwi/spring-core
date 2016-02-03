@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="FootBallGameTest (2)" project="spring-test-jpa-transaction" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.sobngwi.entities.FootBallGameTest" time="0.0">
+    <testcase name="theHomeTeamSetOperationIsCorrectlyUpdated" classname="com.sobngwi.entities.FootBallGameTest" time="0.0"/>
+    <testcase name="testPlayGame" classname="com.sobngwi.entities.FootBallGameTest" time="0.0"/>
+    <testcase name="homeAndAwayAreNotNull" classname="com.sobngwi.entities.FootBallGameTest" time="0.0"/>
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.FootBallGameTest" time="0.0"/>
+  </testsuite>
+</testrun>

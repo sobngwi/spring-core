@@ -5,7 +5,7 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-02-02T13:34:21Z</updated>
+  <updated>2016-02-02T13:34:00Z</updated>
   <entry>
     <title>This Week in Spring - February 2nd, 2016</title>
     <link rel="alternate" href="https://spring.io/blog/2016/02/02/this-week-in-spring-february-2nd-2016" />
@@ -14,7 +14,7 @@
       <name>Josh Long</name>
     </author>
     <id>tag:spring.io,2016-02-02:2363</id>
-    <updated>2016-02-02T13:34:21Z</updated>
+    <updated>2016-02-02T13:34:00Z</updated>
     <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring!&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;This week I&amp;rsquo;m off to the &lt;a href="http://microxchg.io/2016/index.html"&gt;Microxchg&lt;/a&gt; conference in Berlin, Germany, to generally bring the Spring and talk about microservices. Then, it&amp;rsquo;s off to Stockholm, Sweden for &lt;a href="http://www.jfokus.se/jfokus/"&gt;JFokus&lt;/a&gt;! As usual, if you&amp;rsquo;re in either of those places, &lt;a href="http://twitter.com/starbuxman"&gt;hit me up&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;This week we&amp;rsquo;ve got a lot to cover so let&amp;rsquo;s get to it!&lt;/p&gt;
@@ -24,12 +24,70 @@
   &lt;li&gt;Spring Security lead Rob Winch has a nice post on security with Angular.js titled, &lt;a href="http://spring.io/blog/2016/01/28/angularjs-escaping-the-expression-sandbox-for-xss"&gt;&lt;em&gt;Angular.js: Escaping the Expression Sandbox for XSS&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Integration committer (and, yes, ninja) and &lt;a href="http://spring.io/blog/2016/01/28/java-dsl-for-spring-integration-1-1-2-is-available-now"&gt;Spring Integration Java Config DSL lead Artem Bilan has just announced Spring Integration 1.1.2&lt;/a&gt; which includes updates and bug fixes.&lt;/li&gt;
   &lt;li&gt;Spring IO Platform lead Andy Wilkinson&amp;rsquo;s just &lt;a href="http://spring.io/blog/2016/02/01/spring-io-platform-2-0-2-release"&gt;released Spring IO Platform 2.0.2&lt;/a&gt; which adds the latest maintenance releases for several projects&lt;/li&gt;
+  &lt;li&gt;SpringOne2GX 2015 replay: &lt;a href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-implementing-a-highly-scalable-stock-prediction-system-with-r-apache-geode-and-spring-xd"&gt;Implementing a Highly Scalable Stock Prediction System with R, Apache Geode and Spring XD&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;SpringOne2GX 2015 replay: &lt;a href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-spring-boot-is-made-for-tooling"&gt;Spring Boot is made for tooling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;SpringOne2GX 2015 replay: &lt;a href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-building-highly-scalable-spring-applications-with-in-memory-distributed-data"&gt;Building Highly-Scalable Spring Applications with In-Memory, Distributed Data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;SpringOne2GX 2015 replay: &lt;a href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-introduction-to-reactive-programming"&gt;Introduction to Reactive Programming&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;I really enjoyed &lt;a href="http://yetanotherdevblog.com/introduction_to_spring_restdocs"&gt;Stathis Souris&amp;rsquo;s post on using Spring REST Docs&lt;/a&gt;: it&amp;rsquo;s thorough, progresses linearly and nicely, and it&amp;rsquo;s up-to-date. Well done!&lt;/li&gt;
   &lt;li&gt;our pal Biju Kunjummen&amp;rsquo;s put together a nice post &lt;a href="http://www.javacodegeeks.com/2016/02/spring-cloud-ribbon-making-secured-call.html"&gt;on using Spring Cloud Ribbon to make secured calls to another service&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;our pal Petri Kainulainen is back at it again, this time with the &lt;a href="http://www.petrikainulainen.net/programming/spring-framework/spring-batch-tutorial-getting-the-required-dependencies-with-maven/"&gt;second installment of his series on Spring Batch&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;if you &lt;em&gt;must&lt;/em&gt; stand up a new application today without Spring Boot, then you might look at &lt;a href="http://blog.codeleak.pl/2016/01/spring-mvc-4-quickstart-maven-archetype.html"&gt;Rafał Borowiec&lt;/a&gt;&amp;rsquo;s Maven archetype. But, (_gulp_!) please don&amp;rsquo;t stand up a new application without Spring Boot!&lt;/li&gt;
   &lt;li&gt;I loved this forum post on the good &amp;rsquo;ol JavaRanch in which our very own Craig Walls, lead of Spring Social and author of the recently released and epic &lt;em&gt;Spring Boot in Action&lt;/em&gt;, answers the question: &lt;a href="http://www.coderanch.com/t/661254/Spring/Spring-Boot-Spring-Projects"&gt;How does Spring Boot relate to other Spring projects&lt;/a&gt;? Check it out!&lt;/li&gt;
 &lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2015 replay: Implementing a Highly Scalable Stock Prediction System with R, Apache Geode and Spring XD</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-implementing-a-highly-scalable-stock-prediction-system-with-r-apache-geode-and-spring-xd" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-02-02:2366</id>
+    <updated>2016-02-02T13:33:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015.&lt;br/&gt;Presenters: Fred Melo &amp;amp; William Markito Oliveira&lt;br/&gt;Big Data Track&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/implementing-a-highly-scalable-stock-prediction-system-with-r-apache-geode-and-spring-xd"&gt;http://www.slideshare.net/SpringCentral/implementing-a-highly-scalable-stock-prediction-system-with-r-apache-geode-and-spring-xd&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Finance market prediction has always been one of the hottest topics in Data Science and Machine Learning. However, the prediction algorithm is just a small piece of the puzzle. Building a data stream pipeline that is constantly combining the latest price info with high volume historical data is extremely challenging using traditional platforms, requiring a lot of code and thinking about how to scale or move into the cloud. This session is going to walk-through the architecture and implementation details of an application built on top of open-source tools that demonstrate how to easily build a stock prediction solution with no source code - except a few lines of R and the web interface that will consume data through a RESTful endpoint, real-time. The solution leverages in-memory data grid technology for high-speed ingestion, combining streaming of real-time data and distributed processing for stock indicator algorithms.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/0btWBAWnz20" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2015 replay: Spring Boot is made for tooling</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-spring-boot-is-made-for-tooling" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-02-02:2367</id>
+    <updated>2016-02-02T13:33:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015.&lt;br/&gt;Presenters:Yann Cébron - JetBrains, Stéphane Nicoll, Pivotal&lt;br/&gt;Core Spring Track&lt;br/&gt;Slides: no slides all demo&lt;/p&gt;
+&lt;p&gt;For many years, IntelliJ IDEA has been widely used in projects employing the Spring Framework. The latest version of the IDE (14.1) now ships with dedicated Spring Boot support. In this practical presentation we&amp;rsquo;re going to look at some features from IntelliJ IDEA that will help you not only get started with Spring Boot but also guide you along the way, helping with coding and configuration management for your application. As a bonus, we&amp;rsquo;ll also discover some nice hidden tips and tricks you might not know yet. This talk is all about being more efficient when writing code.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/IHZ0d3MBb0g" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2015 replay: Building Highly-Scalable Spring Applications with In-Memory, Distributed Data</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-building-highly-scalable-spring-applications-with-in-memory-distributed-data" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-02-02:2365</id>
+    <updated>2016-02-02T13:24:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015.&lt;br/&gt;Speakers: John Blum &amp;amp; Luke Shannon&lt;br/&gt;Data/Integration Track&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/building-highly-scalable-spring-applications-using-inmemory-data-grids-53086251"&gt;http://www.slideshare.net/SpringCentral/building-highly-scalable-spring-applications-using-inmemory-data-grids-53086251&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Building highly scalable, low latency applications while simultaneously preserving consistency, high availability and resiliency requires a new breed of technology. In this presentation we introduce Pivotal GemFire along with the open source offering, Apache Geode. Apache Geode is a proven, distributed, in-memory database with ACID properties that can handle large volumes of transactional data under heavy load. Apache Geode gives Spring-based applications the edge they require as demand changes without sacrificing integrity or the end-user&amp;rsquo;s experience.&lt;/p&gt;
+&lt;p&gt;Using Spring Boot and Spring Data GemFire, we demonstrate how to effectively build highly scalable applications with Pivotal GemFire/Apache Geode starting with configuration and setup, then moving into persisting and accessing data with Spring Data Commons Repositories, OQL with proper Indexing, and Spring Data GemFire&amp;rsquo;s annotation-based, data-aware Function executions, based on the familiar Map-Reduce pattern of bringing business logic to your data. Next, we expand on these fundamental, foundational features with advanced topics on Partitioning, Collocation, Write-Through/Write-Behind, Register Interests/CQs, PDX and Cache as well as Global, JTA-based Transactions.&lt;/p&gt;
+&lt;p&gt;Finally, we show how Pivotal GemFire/Apache Geode can be used to seamlessly address other application concerns from caching with Spring&amp;rsquo;s core Cache Abstraction to session management using Spring Session. And most importantly, we cover techniques for properly testing applications built on Pivotal GemFire along with techniques to manage and monitor your cluster. By sessions end, attendees should feel comfortable building highly-scalable applications effectively and productively.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1mMDl-0Scmc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne2GX 2015 replay: Introduction to Reactive Programming</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/02/02/springone2gx-2015-replay-introduction-to-reactive-programming" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-02-02:2364</id>
+    <updated>2016-02-02T12:41:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015&lt;br/&gt;Presenters: Stephane Maldini &amp;amp; Rossen Stoyanchev&lt;br/&gt;Web / Javascript Track&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/introduction-to-reactive-programming"&gt;http://www.slideshare.net/SpringCentral/introduction-to-reactive-programming&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is your one stop shop introduction to get oriented to the world of reactive programming. There are lots of such intros out there even manifestos. We hope this is the one where you don&amp;rsquo;t get lost and it makes sense. Get a definition of what &amp;ldquo;reactive&amp;rdquo; means and why it matters. Learn about Reactive Streams and Reactive Extensions and the emerging ecosystem around them. Get a sense for what going reactive means for the programming model. See lots of hands-on demos introducing the basic concepts in composition libraries using RxJava and Reactor.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/fec9nEIybp0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
   <entry>
     <title>Spring Statemachine 1.1.0.M1 Released</title>
@@ -402,121 +460,5 @@ We will cover recent additions and improvements in Spring Data Commons - the mod
     <id>tag:spring.io,2016-01-12:2347</id>
     <updated>2016-01-12T11:38:00Z</updated>
     <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015.&lt;br/&gt;Track: Web / Javascript Track&lt;br/&gt;Speaker: Andy Wilkinson&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/documenting-restful-apis"&gt;http://www.slideshare.net/SpringCentral/documenting-restful-apis&lt;/a&gt;&lt;br/&gt;An API&amp;rsquo;s documentation is a vital part of making it easy to understand and easy to use. RESTful APIs are no different. In this talk we&amp;rsquo;ll look at what should be included in your RESTful API&amp;rsquo;s documentation and, just as importantly, what should be omitted. Using real-word examples, both good and bad, we&amp;rsquo;ll discuss how the documentation should be structured so that it&amp;rsquo;s informative, succinct, and easy to read. Having identified what good documentation looks like, we&amp;rsquo;ll discuss some of the tools that are available for documenting services built using Spring. In particular, we&amp;rsquo;ll look at some of the problems and limitations of choosing a tool like Swagger and how some alternatives, including Spring REST Docs, avoid these shortcomings and help you to produce documentation that your users will love.&lt;br/&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/k5ncCJBarRI" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2015 replay: Spring Boot and Groovy</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/01/12/springone2gx-2015-replay-spring-boot-and-groovy" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-01-12:2348</id>
-    <updated>2016-01-12T11:38:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015.&lt;br/&gt;Track: Core Groovy Track&lt;br/&gt;Speaker: Fatima Casau&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/using-groovy-grails-in-your-spring-boot-project"&gt;http://www.slideshare.net/SpringCentral/using-groovy-grails-in-your-spring-boot-project&lt;/a&gt;&lt;br/&gt;The emergence of Spring Boot has significantly improved the development of applications with Spring, allowing you to create applications faster by improving the configuration and removing repetitive tasks. Some of the dependencies that can be included are support for ‘Groovy’ and also the use of ‘GORM (Grails Object Relational Mapping)’ as well as ‘Hibernate’ for persistence. We will see where and how to use them in our projects with Spring Boot and how this set of technologies can convert our work in a great experience.&lt;br/&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/-JJOymUWISg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2015 replay: Stream Processing at Scale with Spring XD and Kafka</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/01/12/springone2gx-2015-replay-stream-processing-at-scale-with-spring-xd-and-kafka" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-01-12:2346</id>
-    <updated>2016-01-12T11:22:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015.&lt;br/&gt;Track: Big Data&lt;br/&gt;Speaker: Marius Bogoevici&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/stream-processing-at-scale-with-spring-xd-and-kafka"&gt;http://www.slideshare.net/SpringCentral/stream-processing-at-scale-with-spring-xd-and-kafka&lt;/a&gt;&lt;br/&gt;In the recent years, drastic increases in data volume, as well as a greater demand for low latency have led to a radical shift in business requirements and application development methods. Near-realtime data processing has started to become more prevalent, and high-throughput messaging systems such as Apache Kafka have emerged as key building blocks. Focusing on developer experience and productivity, Spring XD makes it easy to develop big data applications, without the need for dealing with the details of integrating and scaling a big data stack. In the particular context of Kafka, this means allowing developers to benefit from its specific features and power, while at the same time remaining focused on writing and testing business logic. To begin, we will provide a brief introduction of how Kafka is supported in the Spring ecosystem in general, in Spring Integration and Spring Data, and then we will discuss how Spring XD integrates with Kafka as an external datasource and transport. And because we like all things practical, the core part of the presentation will walk you through a demo that will show you how to unleash the power of Kafka with Spring XD, by building a highly scalable data pipeline with RxJava and Kafka, using Spring XD as a platform.&lt;br/&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/OZCQ52H0Kks" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne2GX 2015 replay: The State of Securing RESTful APIs with Spring</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/01/12/springone2gx-2015-replay-the-state-of-securing-restful-apis-with-spring" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-01-12:2345</id>
-    <updated>2016-01-12T11:12:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne2GX 2015.&lt;br/&gt;Track: Web / Javascript track&lt;br/&gt;Speaker: Rob Winch&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/state-of-securing-restful-apis-with-spring"&gt;http://www.slideshare.net/SpringCentral/state-of-securing-restful-apis-with-spring&lt;/a&gt;&lt;br/&gt;The many benefits of a RESTful architecture has made it the standard way in which to design web based APIs. For example, the principles of REST state that we should leverage standard HTTP verbs which helps to keep our APIs simple. Server components that are considered RESTFul should be stateless which help to ensure that they can easily scale. We can leverage caching to gain further performance and scalability benefits.&lt;/p&gt;
-&lt;p&gt;However, the best practices of REST and security often seem to clash. How should a user be authenticated in a stateless application? How can a secured resource also support caching? Securing RESTful endpoints is further complicated by the the fact that security best practices evolve so rapidly.&lt;/p&gt;
-&lt;p&gt;In this talk Rob will discuss how to properly secure your RESTful endpoints. Along the way we will explore some common pitfalls when applying security to RESTful APIs. Finally, we will see how the new features in Spring Security can greatly simplify securing your RESTful APIs.&lt;br/&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/o4nt9IR8iL8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration Zip 1.0.0.M1 and others</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/01/12/spring-integration-zip-1-0-0-m1-and-others" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2016-01-11:2344</id>
-    <updated>2016-01-12T00:00:00Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;p&gt;The Spring Integration team wants to wish you a Happy New Year!&lt;/p&gt;
-&lt;p&gt;We have been super-busy working on new features and improvements. Here is an overview of our recent activities around Spring Integration and Spring AMQP:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-  &lt;p&gt;We made several maintenance releases of Spring Integration 4.2.x, the most recent being Spring Integration 4.2.4. All other maintenance versions will be released only on &lt;a href="https://spring.io/blog/2015/10/27/spring-integration-maintenance-releases-available"&gt;demand&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;Spring Integration 4.3 is planned for this summer. Furthermore, for version 5.0, we started looking more closely at incorporating Reactive Streams into the Framework.&lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;Similarly with the Spring AMQP project, the current maintenance version is &lt;code&gt;1.5.3&lt;/code&gt; and &lt;code&gt;1.6&lt;/code&gt; has been started, too.&lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;Spring Integration Java DSL &lt;code&gt;1.1.1&lt;/code&gt; is available, too. You can find several Java DSL samples in the latest &lt;a href="http://docs.spring.io/spring-integration/docs/latest-ga/reference/html/files.html#_configuring_with_the_java_dsl_7"&gt;Spring Integration Manual&lt;/a&gt;, by the way.&lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;Spring Integration Kakfa 1.3 has been released as well with features like:&lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;Kafka Native Offest Manager;&lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;Sync Producer and &lt;code&gt;ProducerListener&lt;/code&gt; callback support;&lt;/li&gt;
-  &lt;li&gt;New Brokers discovery for the &lt;code&gt;KafkaMessageListenerContainer&lt;/code&gt;;&lt;/li&gt;
-  &lt;li&gt;And yes: the High Level Consumer Adapter has been deprecated.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We are also working on Spring Integration Kafka 2.0 which will be based on Apache Kafka 0.9.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-integration-zip" class="anchor" name="spring-integration-zip"&gt;&lt;/a&gt;Spring Integration Zip&lt;/h2&gt;
-&lt;p&gt;Today we are pleased to announce that the &lt;a href="https://github.com/spring-projects/spring-integration-extensions/tree/master/spring-integration-zip"&gt;Spring Integration Zip&lt;/a&gt; &lt;strong&gt;1.0.0.M1&lt;/strong&gt; is now available from the &lt;a href="https://repo.spring.io/milestone/"&gt;Milestone Repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Especial thanks to our pal &lt;a href="https://spring.io/team/ghillert"&gt;Gunnar Hillert&lt;/a&gt;, who initiated and started the work for this extension.&lt;/p&gt;
-&lt;p&gt;The Spring Integration Zip extension provides compression/uncompression components as you would expect. The “hard” work is done by the &lt;code&gt;AbstractZipTransformer&lt;/code&gt; implementations which uses the &lt;a href="https://github.com/zeroturnaround/zt-zip"&gt;ZeroTurnaround ZIP Library&lt;/a&gt; under the covers. &lt;code&gt;zt-zip&lt;/code&gt; provides a convenient, high-level API over the standard &lt;code&gt;java.util.zip&lt;/code&gt; package.&lt;/p&gt;
-&lt;p&gt;With this Milestone 1 the following components are provided:&lt;/p&gt;&lt;h3&gt;&lt;a href="#zip-transformer" class="anchor" name="zip-transformer"&gt;&lt;/a&gt;Zip transformer&lt;/h3&gt;
-&lt;p&gt;The goal of this component is to zip inbound message payloads and to produce a compressed archive, based on the java.util.zip.Deflater compression level. The following message payload types are supported: &lt;code&gt;File&lt;/code&gt;, &lt;code&gt;String&lt;/code&gt;, &lt;code&gt;byte[]&lt;/code&gt; or &lt;code&gt;Iterable&lt;/code&gt; of those types. The result can be returned either as a &lt;code&gt;File&lt;/code&gt; or as &lt;code&gt;byte[]&lt;/code&gt; of compressed data. This is defined by the &lt;code&gt;ZipResultType&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;It is easy to configure the Zip Transformer with XML components:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;int-zip:zip-transformer input-channel=&amp;quot;input&amp;quot;&#xD;
-                         output-channel=&amp;quot;output&amp;quot;&#xD;
-                         result-type=&amp;quot;BYTE_ARRAY&amp;quot;&#xD;
-                         compression-level=&amp;quot;9&amp;quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;as well as with Java Config:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Bean&#xD;
-@Transformer(inputChannel = &amp;quot;input&amp;quot;, outputChannel = &amp;quot;output&amp;quot;)&#xD;
-public ZipTransformer zipTransformer() {&#xD;
-    ZipTransformer zipTransformer = new ZipTransformer();&#xD;
-    zipTransformer.setCompressionLevel(Deflater.BEST_COMPRESSION);&#xD;
-    zipTransformer.setZipResultType(ZipResultType.BYTE_ARRAY);&#xD;
-    return zipTransformer;&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a href="#unzip-transformer" class="anchor" name="unzip-transformer"&gt;&lt;/a&gt;UnZip transformer&lt;/h3&gt;
-&lt;p&gt;The logic implemented in the uncompression component is similarly straightforward. For the input message payload, the following types are supported: &lt;code&gt;File&lt;/code&gt;, &lt;code&gt;String&lt;/code&gt; or &lt;code&gt;byte[]&lt;/code&gt; and treated as an archive to decompress. When unzipping data, you can also specify a property &lt;code&gt;expectSingleResult&lt;/code&gt;. If set to &lt;code&gt;true&lt;/code&gt; and more than &lt;code&gt;1&lt;/code&gt; zip entry were detected, a &lt;code&gt;MessagingException&lt;/code&gt; will be raised. This property also influences the return type of the payload. If set to &lt;code&gt;false&lt;/code&gt; (the default), then the payload will be of type &lt;code&gt;SortedMap&lt;/code&gt;, if &lt;code&gt;true&lt;/code&gt;, however, the actual zip entry will be returned.&lt;/p&gt;
-&lt;p&gt;The config for this component is simple, too:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;int-zip:unzip-transformer input-channel=&amp;quot;input&amp;quot;&#xD;
-                           output-channel=&amp;quot;output&amp;quot;&#xD;
-                           delete-files=&amp;quot;true&amp;quot;&#xD;
-                           result-type=&amp;quot;FILE&amp;quot;&#xD;
-                           expect-single-result=&amp;quot;true&amp;quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Bean&#xD;
-@Transformer(inputChannel = &amp;quot;input&amp;quot;, outputChannel = &amp;quot;output&amp;quot;)&#xD;
-public UnZipTransformer unZipTransformer() {&#xD;
-    UnZipTransformer unZipTransformer = new UnZipTransformer();&#xD;
-    unZipTransformer.setExpectSingleResult(true);&#xD;
-    unZipTransformer.setZipResultType(ZipResultType.FILE);&#xD;
-    unZipTransformer.setWorkDirectory(new File(&amp;quot;/usr/tmp/uncompress&amp;quot;));&#xD;
-    unZipTransformer.setDeleteFiles(true);&#xD;
-    return unZipTransformer;&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a href="#unzip-result-splitter" class="anchor" name="unzip-result-splitter"&gt;&lt;/a&gt;UnZip Result Splitter&lt;/h3&gt;
-&lt;p&gt;The &lt;code&gt;UnZipResultSplitter&lt;/code&gt; can be used as a downstream helper component to produce each unzipped entry as a separate message. The &lt;code&gt;FileHeaders.FILENAME&lt;/code&gt; and &lt;code&gt;ZipHeaders.ZIP_ENTRY_PATH&lt;/code&gt; headers are populated for each splitted item:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;int:chain input-channel=&amp;quot;input&amp;quot; output-channel=&amp;quot;out&amp;quot;&amp;gt;&#xD;
-    &amp;lt;int-zip:unzip-transformer result-type=&amp;quot;BYTE_ARRAY&amp;quot;/&amp;gt;&#xD;
-    &amp;lt;int:splitter&amp;gt;&#xD;
-        &amp;lt;bean class=&amp;quot;org.springframework.integration.zip.splitter.UnZipResultSplitter&amp;quot;/&amp;gt;&#xD;
-    &amp;lt;/int:splitter&amp;gt;&#xD;
-&amp;lt;/int:chain&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;This is just the beginning for this extension and any community feedback is very important to us as it helps us to understand what to improve, what should be added or changed. Therefore, do not hesitate to reach out to us via any available channel to share your ideas or to get some help from us!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-extensions"&gt;Project Page&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/INTEXT"&gt;JIRA&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.md"&gt;Contributions&lt;/a&gt; | &lt;a href="http://stackoverflow.com"&gt;StackOverflow&lt;/a&gt; (&lt;code&gt;spring-integration&lt;/code&gt; tag)&lt;/p&gt;</content>
   </entry>
 </feed>
