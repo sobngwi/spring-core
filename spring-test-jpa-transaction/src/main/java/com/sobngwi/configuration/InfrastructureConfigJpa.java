@@ -2,14 +2,15 @@ package com.sobngwi.configuration;
 
 import java.util.Properties;
 
+import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -22,6 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
+@Import({InfrastructureConfigDatasource.class}) 
 @EnableTransactionManagement
 @PropertySource("classpath:prod.properties")
 @ComponentScan({"com.sobngwi.repositoryjpa.impl"})
@@ -29,38 +31,16 @@ public class InfrastructureConfigJpa {
 
 	@Autowired
 	private Environment env;
- /*
-	@Autowired
-	DataSource datasourceProd ;
-	@Autowired
-	DataSource datasourceDev ;
-	*/
+
+	@Resource
+	DataSource dataSourceProdJpa ;
+	@Resource
+	DataSource dataSourceTestJpa ;
+	@Resource
+	DataSource dataSource ;
 	
 	
-	@Bean
-	@Profile("jpa-prod")
-	public DataSource dataSourceProd(){
-		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName(env.getProperty("db.driver"));
-		dataSource.setUrl(env.getProperty("db.url"));
-		dataSource.setUsername(env.getProperty("db.user"));
-		dataSource.setPassword(env.getProperty("db.pass"));
-		
-		return dataSource;
-	}
-	@Bean
-	@Profile("jpa-test")
-	public DataSource dataSourceTest(){
-		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName(env.getProperty("db.driver"));
-		dataSource.setUrl(env.getProperty("db.url"));
-		dataSource.setUsername(env.getProperty("db.user"));
-		dataSource.setPassword(env.getProperty("db.pass"));
-		
-		return dataSource;
-	}
-	
-	
+
 	
 	// ORM .
 	@Bean JpaVendorAdapter jpaVendorAdapter() {
@@ -72,12 +52,27 @@ public class InfrastructureConfigJpa {
 		return adapter;
 	}
 	
-	@Bean LocalContainerEntityManagerFactoryBean entityManagerFactory(  ){
+	@Bean(name = "entityManagerFactory" )
+	@Profile("jpa-test")
+	LocalContainerEntityManagerFactoryBean entityManagerFactoryTest(  ){
 		Properties props = new Properties();
 		props.setProperty("hibernate.format.sql", String.valueOf(true));
 		//props.setProperty("hibernate.hbm2ddl.auto", String.valueOf(true));
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
-		emf.setDataSource(dataSourceTest());
+		emf.setDataSource(dataSource);
+		emf.setPackagesToScan("com.sobngwi.entities");
+		emf.setJpaVendorAdapter(jpaVendorAdapter());
+		emf.setJpaProperties(props);
+		return emf;
+	}
+	@Bean(name = "entityManagerFactory" )
+	@Profile("jpa-prod")
+	LocalContainerEntityManagerFactoryBean entityManagerFactoryProd(  ){
+		Properties props = new Properties();
+		props.setProperty("hibernate.format.sql", String.valueOf(true));
+		//props.setProperty("hibernate.hbm2ddl.auto", String.valueOf(true));
+		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+		emf.setDataSource(dataSource);
 		emf.setPackagesToScan("com.sobngwi.entities");
 		emf.setJpaVendorAdapter(jpaVendorAdapter());
 		emf.setJpaProperties(props);

@@ -27,6 +27,7 @@ public class InfrastructureConfigJdbc {
 	@Autowired
 	private Environment env;
 
+	
 	@Bean ( name = "transactionManager")
 	public PlatformTransactionManager transactionManagerForTest(){
 		return new DataSourceTransactionManager(datasourceForTest());
@@ -37,8 +38,9 @@ public class InfrastructureConfigJdbc {
 		return new DataSourceTransactionManager(datasourceForprod());
 	}
 	
+	
 	@Bean
-	@Profile("test")
+	@Profile("jdbc-test")
 	public DataSource datasourceForTest(){
 		return new EmbeddedDatabaseBuilder()
 				   .generateUniqueName(true)
@@ -50,7 +52,7 @@ public class InfrastructureConfigJdbc {
 	}
 	
 	@Bean
-	@Profile("prod")
+	@Profile("jdbc-prod")
 	public DataSource datasourceForprod(){
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("db.driver"));
@@ -60,7 +62,6 @@ public class InfrastructureConfigJdbc {
 		
 		return dataSource;
 	}
-	
 	
 	@Bean
 	public AccountRowMapper accountRowMapper(){

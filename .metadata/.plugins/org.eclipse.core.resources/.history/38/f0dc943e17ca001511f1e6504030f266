@@ -1,0 +1,55 @@
+package com.sobngwi.configuration;
+
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.sobngwi.repository.AccountRowMapper;
+
+@Configuration
+@EnableTransactionManagement
+@PropertySource("classpath:prod.properties")
+@ComponentScan({"com.sobngwi.repositoryjdbc.impl"})
+public class InfrastructureConfigJdbc {
+
+	@Autowired
+	private Environment env;
+
+	@Autowired
+	DataSource datasourceForTest ;
+	@Autowired
+	DataSource datasourceForprod ;
+	
+	@Bean ( name = "transactionManager")
+	@Profile("test")
+	public PlatformTransactionManager transactionManagerForTest(){
+		return new DataSourceTransactionManager(datasourceForTest);
+	}
+	
+	@Bean ( name = "transactionManager")
+	@Profile("prod")
+	public PlatformTransactionManager transactionManagerForProd(){
+		return new DataSourceTransactionManager(datasourceForprod);
+	}
+	
+	
+	
+	
+	@Bean
+	public AccountRowMapper accountRowMapper(){
+		return new AccountRowMapper();
+	}
+
+}
