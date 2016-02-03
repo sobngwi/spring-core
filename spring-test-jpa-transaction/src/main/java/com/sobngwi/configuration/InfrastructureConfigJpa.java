@@ -22,6 +22,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.sobngwi.service.AccountServiceJpa;
+
 @Configuration
 @Import({InfrastructureConfigDatasourceJpa.class}) 
 @EnableTransactionManagement
@@ -37,7 +39,10 @@ public class InfrastructureConfigJpa {
 	DataSource dataSource ;
 	
 	
-
+	@Bean 
+	AccountServiceJpa accountServiceJpa(){
+		return new AccountServiceJpa();
+	}
 	
 	// ORM .
 	@Bean JpaVendorAdapter jpaVendorAdapter() {

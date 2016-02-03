@@ -1,0 +1,59 @@
+package com.sobngwi.entities;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.number.BigDecimalCloseTo.closeTo;
+import static org.junit.Assert.assertThat;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.junit.Test;
+
+public class AccountServiceTestJpa extends AccountTestJpa{
+
+
+
+	@Test
+	public void testDeposit() {
+		BigDecimal start = accountServiceJpa.getBalance(1L);
+		BigDecimal amount = new BigDecimal("50.0");
+		BigDecimal finish = start.add(amount);
+		accountServiceJpa.deposit(1L, amount);
+		
+		assertThat(finish,
+				is(closeTo(accountServiceJpa.getBalance(1L), new BigDecimal("0.01")))) ;
+	}
+	
+	@Test
+	public void testWithdraw() {
+		BigDecimal start = accountServiceJpa.getBalance(1L);
+		BigDecimal amount = new BigDecimal("50.0");
+		BigDecimal finish = start.subtract(amount);
+		
+		accountServiceJpa.withdraw(1L, amount);
+
+		assertThat(finish,
+				is(closeTo(accountServiceJpa.getBalance(1L), new BigDecimal("0.01")))) ;
+	}
+
+	@Test
+	public void testTransfer() {
+		BigDecimal account1start = accountServiceJpa.getBalance(1L);
+		BigDecimal account2start = accountServiceJpa.getBalance(2L);
+		
+		BigDecimal amount = new BigDecimal("50.0");
+		accountServiceJpa.transfert(1L, 2L, amount);
+		
+		BigDecimal account1finish = account1start.subtract(amount);
+		BigDecimal account2finish = account2start.add(amount);
+		
+		accountServiceJpa.getBalance(1L);
+
+		assertThat(account1finish,
+				is(closeTo(accountServiceJpa.getBalance(1L), new BigDecimal("0.01")))) ;
+		assertThat(account2finish,
+				is(closeTo(accountServiceJpa.getBalance(2L), new BigDecimal("0.01")))) ;
+	}
+	
+}

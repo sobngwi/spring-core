@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="com.sobngwi.entities (1)" project="spring-test-jpa-transaction" tests="21" started="21" failures="0" errors="0" ignored="0">
+  <testsuite name="com.sobngwi.entities.AccountTestJpa" time="0.197">
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.AccountTestJpa" time="0.197"/>
+  </testsuite>
+  <testsuite name="com.sobngwi.entities.AccountTestJdbc" time="0.017">
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.AccountTestJdbc" time="0.017"/>
+  </testsuite>
+  <testsuite name="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.232">
+    <testcase name="testCreateAccount" classname="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.019"/>
+    <testcase name="testGetAccount" classname="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.03"/>
+    <testcase name="testUpdateAccount" classname="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.006"/>
+    <testcase name="testGetAccounts" classname="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.096"/>
+    <testcase name="testGetNumberOfAccounts" classname="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.009"/>
+    <testcase name="testDeleteAccount" classname="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.017"/>
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.AccountRepositoryTestJpa" time="0.055"/>
+  </testsuite>
+  <testsuite name="com.sobngwi.entities.GameTest" time="0.013">
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.GameTest" time="0.013"/>
+  </testsuite>
+  <testsuite name="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.044">
+    <testcase name="testCreateAccount" classname="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.024"/>
+    <testcase name="testGetAccount" classname="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.002"/>
+    <testcase name="testUpdateAccount" classname="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.004"/>
+    <testcase name="testGetAccounts" classname="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.003"/>
+    <testcase name="testGetNumberOfAccounts" classname="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.003"/>
+    <testcase name="testDeleteAccount" classname="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.005"/>
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.AccountRepositoryTestJdbc" time="0.003"/>
+  </testsuite>
+  <testsuite name="com.sobngwi.entities.FootBallGameTest" time="0.003">
+    <testcase name="theHomeTeamSetOperationIsCorrectlyUpdated" classname="com.sobngwi.entities.FootBallGameTest" time="0.001"/>
+    <testcase name="testPlayGame" classname="com.sobngwi.entities.FootBallGameTest" time="0.001"/>
+    <testcase name="homeAndAwayAreNotNull" classname="com.sobngwi.entities.FootBallGameTest" time="0.001"/>
+    <testcase name="should_initialiez_bean_without_error" classname="com.sobngwi.entities.FootBallGameTest" time="0.0"/>
+  </testsuite>
+</testrun>

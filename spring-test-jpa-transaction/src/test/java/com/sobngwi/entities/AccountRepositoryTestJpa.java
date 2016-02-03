@@ -16,14 +16,14 @@ public class AccountRepositoryTestJpa extends AccountTestJpa{
 
 	@Test
 	public void testGetAccounts() {
-		List<Account> accounts = jpaAccountRepositoryJpa.getAccounts() ;
+		List<Account> accounts = accountRepositoryJpa.getAccounts() ;
 		
 		assertThat(accounts.size(), is(3));
 	}
 
 	@Test
 	public void testGetAccount() {
-		Account account = jpaAccountRepositoryJpa.getAccount(1L);
+		Account account = accountRepositoryJpa.getAccount(1L);
 		
 		assertThat( account.getId(), is(1L));
 		assertThat(new BigDecimal("100.0"),
@@ -32,13 +32,13 @@ public class AccountRepositoryTestJpa extends AccountTestJpa{
 
 	@Test
 	public void testGetNumberOfAccounts() {
-		assertThat( jpaAccountRepositoryJpa.getNumberOfAccounts(), is(3));
+		assertThat( accountRepositoryJpa.getNumberOfAccounts(), is(3));
 	}
 
 	@Test
 	public void testCreateAccount() {
-		Long id = jpaAccountRepositoryJpa.createAccount(new BigDecimal("250.05"));
-		Account account = jpaAccountRepositoryJpa.getAccount(id);
+		Long id = accountRepositoryJpa.createAccount(new BigDecimal("250.05"));
+		Account account = accountRepositoryJpa.getAccount(id);
 		
 		assertThat(id , is(notNullValue()));
 		assertThat(account.getId(), is(id));
@@ -48,22 +48,22 @@ public class AccountRepositoryTestJpa extends AccountTestJpa{
 
 	@Test
 	public void testDeleteAccount() {
-		for (Account account : jpaAccountRepositoryJpa.getAccounts()) {
-			jpaAccountRepositoryJpa.deleteAccount(account.getId());
+		for (Account account : accountRepositoryJpa.getAccounts()) {
+			accountRepositoryJpa.deleteAccount(account.getId());
 		}
 		
-		assertThat(jpaAccountRepositoryJpa.getNumberOfAccounts(), is(0));
+		assertThat(accountRepositoryJpa.getNumberOfAccounts(), is(0));
 	}
 
 	@Test
 	public void testUpdateAccount() {
-		Account account = jpaAccountRepositoryJpa.getAccount(1L);
+		Account account = accountRepositoryJpa.getAccount(1L);
 		BigDecimal newAccountBalance = new BigDecimal("50.0");
 		account.setBalance(newAccountBalance);
 		
-		jpaAccountRepositoryJpa.updateAccount(account);
+		accountRepositoryJpa.updateAccount(account);
 		
-		assertThat(jpaAccountRepositoryJpa.getAccount(1l).getBalance(),
+		assertThat(accountRepositoryJpa.getAccount(1l).getBalance(),
 				is(closeTo(newAccountBalance, new BigDecimal("0.01"))));
 	
 	}
