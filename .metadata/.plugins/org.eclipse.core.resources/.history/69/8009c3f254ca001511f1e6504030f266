@@ -19,7 +19,6 @@ public class AccountServiceTestJpa extends AccountTestJpa{
 		BigDecimal start = accountServiceJpa.getBalance(1L);
 		BigDecimal amount = new BigDecimal("50.0");
 		BigDecimal finish = start.add(amount);
-		
 		accountServiceJpa.deposit(1L, amount);
 		
 		assertThat(finish,
@@ -42,11 +41,14 @@ public class AccountServiceTestJpa extends AccountTestJpa{
 	public void testTransfer() {
 		BigDecimal account1start = accountServiceJpa.getBalance(1L);
 		BigDecimal account2start = accountServiceJpa.getBalance(2L);
+		
 		BigDecimal amount = new BigDecimal("50.0");
+		accountServiceJpa.transfert(1L, 2L, amount);
+		
 		BigDecimal account1finish = account1start.subtract(amount);
 		BigDecimal account2finish = account2start.add(amount);
 		
-		accountServiceJpa.transfert(1L, 2L, amount);
+		accountServiceJpa.getBalance(1L);
 
 		assertThat(account1finish,
 				is(closeTo(accountServiceJpa.getBalance(1L), new BigDecimal("0.01")))) ;
