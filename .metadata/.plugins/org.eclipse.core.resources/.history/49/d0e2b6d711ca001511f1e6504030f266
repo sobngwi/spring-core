@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -38,19 +37,7 @@ public class InfrastructureConfigJpa {
 	
 	
 	@Bean
-	@Profile("jpa-prod")
-	public DataSource dataSourceProd(){
-		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName(env.getProperty("db.driver"));
-		dataSource.setUrl(env.getProperty("db.url"));
-		dataSource.setUsername(env.getProperty("db.user"));
-		dataSource.setPassword(env.getProperty("db.pass"));
-		
-		return dataSource;
-	}
-	@Bean
-	@Profile("jpa-test")
-	public DataSource dataSourceTest(){
+	public DataSource dataSource(){
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("db.driver"));
 		dataSource.setUrl(env.getProperty("db.url"));
@@ -77,7 +64,7 @@ public class InfrastructureConfigJpa {
 		props.setProperty("hibernate.format.sql", String.valueOf(true));
 		//props.setProperty("hibernate.hbm2ddl.auto", String.valueOf(true));
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
-		emf.setDataSource(dataSourceTest());
+		emf.setDataSource(dataSource());
 		emf.setPackagesToScan("com.sobngwi.entities");
 		emf.setJpaVendorAdapter(jpaVendorAdapter());
 		emf.setJpaProperties(props);

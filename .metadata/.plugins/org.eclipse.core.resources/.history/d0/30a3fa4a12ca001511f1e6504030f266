@@ -16,7 +16,7 @@ import com.sobngwi.repositoryjpa.impl.AccountRepositoryJpa;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = InfrastructureConfigJpa.class)
 @Transactional
-@ActiveProfiles("jpa-test")
+@ActiveProfiles("test")
 public class AccountTestJpa {
 
 	@Autowired

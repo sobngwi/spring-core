@@ -49,7 +49,6 @@ public class InfrastructureConfigJpa {
 		return dataSource;
 	}
 	@Bean
-	@Profile("jpa-test")
 	public DataSource dataSourceTest(){
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("db.driver"));

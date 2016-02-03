@@ -38,7 +38,7 @@ public class InfrastructureConfigJpa {
 	
 	
 	@Bean
-	@Profile("jpa-prod")
+	@Profile("prod")
 	public DataSource dataSourceProd(){
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("db.driver"));
@@ -49,7 +49,7 @@ public class InfrastructureConfigJpa {
 		return dataSource;
 	}
 	@Bean
-	@Profile("jpa-test")
+	@Profile("test")
 	public DataSource dataSourceTest(){
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(env.getProperty("db.driver"));

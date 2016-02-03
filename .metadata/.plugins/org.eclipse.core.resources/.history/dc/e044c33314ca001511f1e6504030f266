@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -60,7 +62,29 @@ public class InfrastructureConfigJpa {
 		return dataSource;
 	}
 	
+	@Bean
+	@Profile("test")
+	public DataSource datasourceForTest(){
+		return new EmbeddedDatabaseBuilder()
+				   .generateUniqueName(true)
+				   .setType(EmbeddedDatabaseType.H2)
+				   .setScriptEncoding("UTF-8")
+				   .addScript("schema.sql")
+				   .addScripts("data.sql")
+				   .build();
+	}
 	
+	@Bean
+	@Profile("prod")
+	public DataSource datasourceForprod(){
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setDriverClassName(env.getProperty("db.driver"));
+		dataSource.setUrl(env.getProperty("db.url"));
+		dataSource.setUsername(env.getProperty("db.user"));
+		dataSource.setPassword(env.getProperty("db.pass"));
+		
+		return dataSource;
+	}
 	
 	// ORM .
 	@Bean JpaVendorAdapter jpaVendorAdapter() {

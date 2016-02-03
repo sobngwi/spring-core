@@ -16,7 +16,7 @@ import com.sobngwi.entities.Paris;
 import com.sobngwi.entities.Team;
 
 @Configuration
-//@Import({InfrastructureConfigJdbc.class, InfrastructureConfigJpa.class}) // Could be an array of Class
+@Import() // Could be an array of Class
 @EnableAspectJAutoProxy
 public class AppConfig {
 
