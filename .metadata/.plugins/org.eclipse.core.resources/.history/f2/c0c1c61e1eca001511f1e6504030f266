@@ -1,6 +1,5 @@
 package com.sobngwi.configuration;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -19,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.sobngwi.repository.AccountRowMapper;
 
-@Configuration 
+@Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:prod.properties")
 @ComponentScan({"com.sobngwi.repositoryjdbc.impl"})
@@ -27,8 +26,7 @@ public class InfrastructureConfigJdbc {
 
 	@Autowired
 	private Environment env;
-	@Resource
-	DataSource dataSource ;
+
 	
 	@Bean ( name = "transactionManager")
 	public PlatformTransactionManager transactionManagerForTest(){
@@ -39,13 +37,9 @@ public class InfrastructureConfigJdbc {
 	public PlatformTransactionManager transactionManagerForProd(){
 		return new DataSourceTransactionManager(datasourceForprod());
 	}
-
-	@Bean
-	public AccountRowMapper accountRowMapper(){
-		return new AccountRowMapper();
-	}
 	
-	@Bean ( name = "dataSource")
+	
+	@Bean
 	@Profile("jdbc-test")
 	public DataSource datasourceForTest(){
 		return new EmbeddedDatabaseBuilder()
@@ -57,7 +51,7 @@ public class InfrastructureConfigJdbc {
 				   .build();
 	}
 	
-	@Bean ( name = "dataSource")
+	@Bean
 	@Profile("jdbc-prod")
 	public DataSource datasourceForprod(){
 		BasicDataSource dataSource = new BasicDataSource();
@@ -69,5 +63,9 @@ public class InfrastructureConfigJdbc {
 		return dataSource;
 	}
 	
+	@Bean
+	public AccountRowMapper accountRowMapper(){
+		return new AccountRowMapper();
+	}
 
 }

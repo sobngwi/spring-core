@@ -23,7 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@Import({InfrastructureConfigDatasourceJpa.class}) 
+@Import({InfrastructureConfigDatasource.class}) 
 @EnableTransactionManagement
 @PropertySource("classpath:prod.properties")
 @ComponentScan({"com.sobngwi.repositoryjpa.impl"})
