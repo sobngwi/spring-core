@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sobngwi.services.AccountServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-03-13T13:42:07" hostname="MBP-de-Alain" time="0.041">
+  <properties/>
+  <testcase name="testWithdraw" classname="com.sobngwi.services.AccountServiceTest" time="0.024"/>
+  <testcase name="testDeposit" classname="com.sobngwi.services.AccountServiceTest" time="0.009"/>
+  <testcase name="testTransfer" classname="com.sobngwi.services.AccountServiceTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[mars 13, 2016 2:42:07 PM org.springframework.test.context.support.DefaultTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFOS: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+mars 13, 2016 2:42:07 PM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFOS: Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+mars 13, 2016 2:42:07 PM org.springframework.test.context.support.DefaultTestContextBootstrapper getTestExecutionListeners
+INFOS: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@161deaf0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@329ae210, org.springframework.test.context.support.DirtiesContextTestExecutionListener@59d36771, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2d0b2db, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7b63921b]
+mars 13, 2016 2:42:07 PM org.springframework.context.support.GenericApplicationContext prepareRefresh
+INFOS: Refreshing org.springframework.context.support.GenericApplicationContext@1e8c6505: startup date [Sun Mar 13 14:42:07 CET 2016]; root of context hierarchy
+mars 13, 2016 2:42:07 PM org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory initDatabase
+INFOS: Starting embedded database: url='jdbc:h2:mem:0d9faf8e-6018-4e3a-870e-0a8b6e0808ad;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+mars 13, 2016 2:42:07 PM org.springframework.jdbc.datasource.init.ScriptUtils executeSqlScript
+INFOS: Executing SQL script from class path resource [schema.sql]
+mars 13, 2016 2:42:07 PM org.springframework.jdbc.datasource.init.ScriptUtils executeSqlScript
+INFOS: Executed SQL script from class path resource [schema.sql] in 1 ms.
+mars 13, 2016 2:42:07 PM org.springframework.jdbc.datasource.init.ScriptUtils executeSqlScript
+INFOS: Executing SQL script from class path resource [data.sql]
+mars 13, 2016 2:42:07 PM org.springframework.jdbc.datasource.init.ScriptUtils executeSqlScript
+INFOS: Executed SQL script from class path resource [data.sql] in 1 ms.
+mars 13, 2016 2:42:07 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFOS: Began transaction (1) for test context [DefaultTestContext@3b4cba1c testClass = AccountServiceTest, testInstance = com.sobngwi.services.AccountServiceTest@510f24d2, testMethod = testWithdraw@AccountServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@23877aac testClass = AccountServiceTest, locations = '{}', classes = '{class com.sobngwi.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@3a07f83a]; rollback [true]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[100.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[100.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[50.0]
+mars 13, 2016 2:42:07 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFOS: Rolled back transaction for test context [DefaultTestContext@3b4cba1c testClass = AccountServiceTest, testInstance = com.sobngwi.services.AccountServiceTest@510f24d2, testMethod = testWithdraw@AccountServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@23877aac testClass = AccountServiceTest, locations = '{}', classes = '{class com.sobngwi.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+mars 13, 2016 2:42:07 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFOS: Began transaction (1) for test context [DefaultTestContext@3b4cba1c testClass = AccountServiceTest, testInstance = com.sobngwi.services.AccountServiceTest@328850dc, testMethod = testDeposit@AccountServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@23877aac testClass = AccountServiceTest, locations = '{}', classes = '{class com.sobngwi.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@3a07f83a]; rollback [true]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[100.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[100.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[150.0]
+mars 13, 2016 2:42:07 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFOS: Rolled back transaction for test context [DefaultTestContext@3b4cba1c testClass = AccountServiceTest, testInstance = com.sobngwi.services.AccountServiceTest@328850dc, testMethod = testDeposit@AccountServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@23877aac testClass = AccountServiceTest, locations = '{}', classes = '{class com.sobngwi.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+mars 13, 2016 2:42:07 PM org.springframework.test.context.transaction.TransactionContext startTransaction
+INFOS: Began transaction (1) for test context [DefaultTestContext@3b4cba1c testClass = AccountServiceTest, testInstance = com.sobngwi.services.AccountServiceTest@17590385, testMethod = testTransfer@AccountServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@23877aac testClass = AccountServiceTest, locations = '{}', classes = '{class com.sobngwi.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@3a07f83a]; rollback [true]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[100.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[2], balance :[120.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[100.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[2], balance :[120.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[1], balance :[50.0]
+[Test worker] INFO com.sobngwi.entities.Account - Constructor is calling with id :[2], balance :[170.0]
+mars 13, 2016 2:42:07 PM org.springframework.test.context.transaction.TransactionContext endTransaction
+INFOS: Rolled back transaction for test context [DefaultTestContext@3b4cba1c testClass = AccountServiceTest, testInstance = com.sobngwi.services.AccountServiceTest@17590385, testMethod = testTransfer@AccountServiceTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@23877aac testClass = AccountServiceTest, locations = '{}', classes = '{class com.sobngwi.config.AppConfig}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+]]></system-err>
+</testsuite>
