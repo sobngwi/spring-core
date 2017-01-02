@@ -1,0 +1,46 @@
+setiings.xml
+<server>
+      <id>tomcat-server</id>
+      <username>admin</username>
+      <password>{vdXwW74xv6UH998TQZY+oVB5S9uh8Ic5PA+ZVhKyHqA=}</password>
+    </server>
+tomcat-users.xml
+ <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <user username="tomcat" password="s3cret" roles="manager-gui,manager-script"/>
+  <user username="admin" password="s3cret" roles="manager-script,manager-gui"/>
+  
+  context.xml
+  <Context>
+
+    <!-- Default set of monitored resources. If one of these changes, the    -->
+    <!-- web application will be reloaded.                                   -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+    <Manager pathname="" />
+    -->
+    <Resource name="jdbc/test" auth="Container" type="javax.sql.DataSource" maxActive="100"
+    maxIdle="30" maxWait="10000" username="root"  password="root"
+    driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/hr"/>
+</Context>
+
+cat setenv.sh
+export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote"
+export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.port=9876"
+export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.authenticate=false"
+
+
+server.xml
+<Service name="Catalina">
+protocol="org.apache.coyote.http11.Http11Nio2Protocol"
+    maxThreads="150"
+    SSLEnabled="true"
+    scheme="https"
+    secure="true"
+    clientAuth="false"
+    sslProtocol="TLS"
+    keystoreFile="/Users/sobngwi/tomcat8/conf/devel.keystore"
+    keystorePass="qubits" />
